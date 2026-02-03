@@ -1,0 +1,52 @@
+<h1>Yeah app is working</h1>
+
+<p>* it is example of interpolation</p>
+<p>my name is {{name}}</p>
+
+<br><br>
+
+<p>* it is example of disable button</p>
+<button [disabled]="buttonVisibility" (click)="buttnDisableHandling()">click me</button>
+
+<br>
+
+<p>* it is example of image</p>
+<img [src]="itemImageUrl" />
+
+<br>
+
+<p>* It is Example of toggle button</p>
+<button (click)="handleDirectionClick()">{{direction}}</button>
+
+<br>
+
+<p>* It is Example of set value</p>
+<button (click)='method("sudeep chatterjee")'>update name to full name</button>
+
+<br>
+
+<p>* It is example of two way binding</p>
+<input type="text" [(ngModel)]="name">
+<button (click)="addCity(name)" *ngIf="!saveVisible">add</button>
+<button *ngIf="saveVisible" (click)="saveButtonAdd()">Save</button>
+<br>
+
+<p>* It is example of for loop</p>
+<ul>
+    <li *ngFor="let city of city ; let i = index">{{city}} <button style="width: 60px; justify-items: end;"
+            (click)="handleEdit(i)">Edit</button></li>
+
+</ul>
+<br><br>
+
+<p>* is it example of ng if</p>
+
+<p *ngIf="visibility">if directive is working</p>
+
+<br>
+
+<button (click)="toggleVisibility()">toggle visibility ngIf</button>
+
+<br><br>
+
+<p>* component use</p>
