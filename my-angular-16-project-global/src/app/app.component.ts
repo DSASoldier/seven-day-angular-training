@@ -1,15 +1,42 @@
 import { NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
-import { Component, NgModule } from "@angular/core";
-
+import { AfterViewInit, Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
+import { TestingService } from "./services/testing.service";
+import { DayTwoComponent } from "./day-two/day-two.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
+  // imports:[DayTwoComponent]
 })
-export class AppComponent {
-  title=""
+export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
+  title="data is passed successfully"
+
+  @ViewChild(DayTwoComponent) child!: DayTwoComponent;
+
+  constructor(private dataItem:TestingService){
+    console.log(dataItem.getData());
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("ng on changes triggered",changes);
+  }
+  
+  ngOnInit(): void {
+    console.log("ng on init is called");
+  }
+
+  
+  ngAfterViewInit(): void {
+    console.log('Child component available:', this.child);
+  }
+
+  ngOnDestroy(): void {
+    console.log("ng on destroy is called");
+  }
+
   
 }

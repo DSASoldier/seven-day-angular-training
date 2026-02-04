@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  
   name: string = "sudeep chatterjee";
   buttonVisibility: boolean = false;
   itemImageUrl: string = "assets/favicon.ico";
@@ -15,7 +16,7 @@ export class HomeComponent {
   visibility: boolean = false;
   saveVisible: boolean = false;
   index: number = -1;
-
+  
   constructor(){
     this.name = "sudeep";
   }

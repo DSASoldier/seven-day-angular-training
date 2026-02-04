@@ -1,0 +1,15 @@
+<h1>data passing through @Input</h1>
+<p>title ------------------> {{title}}</p>
+
+
+<h1>* ng style</h1>
+<button (click)="changeColor()" [ngStyle]="{'background-color':color}">click me for ng style</button>
+
+<h1>dynamically styled text</h1>
+<p [ngClass]="{'highlight': isActive, 'bold': isBold}">
+  Dynamically styled text
+</p>
+
+<h1>Host Listener by pressing enter</h1>
+
+<p>{{counter}}</p>
