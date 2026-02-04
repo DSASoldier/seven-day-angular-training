@@ -1,0 +1,9 @@
+.city-list-item{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+}
+.city-edit-button{
+    width: 60px; 
+    justify-items: end;
+}
