@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  name:string = "sudeep chatterjee";
-  buttonVisibility:boolean = false;
-  itemImageUrl:string = "assets/favicon.ico";
-  direction:string = "UP";
-  city:string[] = ["indore","mumbai","chennai","kolkata","bhopal"];
-  visibility:boolean = false;
-  saveVisible:boolean = false;
-  index:number = -1;
+  name: string = "sudeep chatterjee";
+  buttonVisibility: boolean = false;
+  itemImageUrl: string = "assets/favicon.ico";
+  direction: string = "UP";
+  city: string[] = ["indore","mumbai","chennai","kolkata","bhopal"];
+  visibility: boolean = false;
+  saveVisible: boolean = false;
+  index: number = -1;
 
   constructor(){
     this.name = "sudeep";
@@ -28,7 +28,7 @@ export class HomeComponent {
     this.direction = this.direction === "UP" ? "down":"UP";
   }
   
-  method(updatedName:string){
+  method(updatedName: string){
     this.name = updatedName;
   }
   
@@ -36,16 +36,21 @@ export class HomeComponent {
     this.visibility = !this.visibility;
   }
 
-  addCity(cityName:string){
-    this.city.push(cityName);
+  addCity(cityName: string){
+
+    if(!this.saveVisible)
+    {
+      this.city.push(cityName);
+    }
+    else{
+      this.city[this.index] = this.name;
+      this.saveVisible = !this.saveVisible;
+    }
   }
 
-  handleEdit(index:number){
+  handleEdit(index: number){
     this.saveVisible = !this.saveVisible;
     this.index=index;
   }
-  saveButtonAdd(){
-    this.city[this.index] = this.name;
-    this.saveVisible = !this.saveVisible;
-  }
+  
 }
