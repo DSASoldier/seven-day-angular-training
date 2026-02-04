@@ -17,7 +17,7 @@ export class HomeComponent {
   index:number = -1;
 
   constructor(){
-    this.name = "sudeep"
+    this.name = "sudeep";
   }
 
   buttnDisableHandling(){
@@ -29,23 +29,23 @@ export class HomeComponent {
   }
   
   method(updatedName:string){
-    this.name = updatedName
+    this.name = updatedName;
   }
   
   toggleVisibility(){
-    this.visibility = !this.visibility
+    this.visibility = !this.visibility;
   }
 
   addCity(cityName:string){
-    this.city.push(cityName)
+    this.city.push(cityName);
   }
 
   handleEdit(index:number){
-    this.saveVisible = !this.saveVisible
-    this.index=index
+    this.saveVisible = !this.saveVisible;
+    this.index=index;
   }
   saveButtonAdd(){
     this.city[this.index] = this.name;
-    this.saveVisible = !this.saveVisible
+    this.saveVisible = !this.saveVisible;
   }
 }
