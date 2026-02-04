@@ -1,52 +1,34 @@
 <h1>Yeah app is working</h1>
-
-<p>* it is example of interpolation</p>
+<h1>* it is example of interpolation</h1>
 <p>my name is {{name}}</p>
-
 <br><br>
-
-<p>* it is example of disable button</p>
+<h1>* it is example of disable button</h1>
 <button [disabled]="buttonVisibility" (click)="buttnDisableHandling()">click me</button>
-
 <br>
-
-<p>* it is example of image</p>
+<h1>* it is example of image</h1>
 <img [src]="itemImageUrl" />
-
 <br>
-
-<p>* It is Example of toggle button</p>
+<h1>* It is Example of toggle button</h1>
 <button (click)="handleDirectionClick()">{{direction}}</button>
-
-<br>
-
-<p>* It is Example of set value</p>
+<br/>
+<h1>* It is Example of set value</h1>
 <button (click)='method("sudeep chatterjee")'>update name to full name</button>
-
 <br>
-
-<p>* It is example of two way binding</p>
+<h1>* It is example of two way binding</h1>
 <input type="text" [(ngModel)]="name">
-<button (click)="addCity(name)" *ngIf="!saveVisible">add</button>
-<button *ngIf="saveVisible" (click)="saveButtonAdd()">Save</button>
+<button (click)="addCity(name)">{{saveVisible?'save':'add'}}</button>
+<!-- <button *ngIf="saveVisible" (click)="saveButtonAdd()">Save</button> -->
 <br>
-
-<p>* It is example of for loop</p>
+<h1>* It is example of for loop</h1>
 <ul>
-    <li *ngFor="let city of city ; let i = index">{{city}} <button style="width: 60px; justify-items: end;"
-            (click)="handleEdit(i)">Edit</button></li>
-
+    <li *ngFor="let city of city ; let i = index" class="city-list-item">
+        {{city}} <button class="city-edit-button"
+        (click)="handleEdit(i)">Edit</button>
+    </li>
 </ul>
 <br><br>
-
-<p>* is it example of ng if</p>
-
+<h1>* is it example of ng if</h1>
 <p *ngIf="visibility">if directive is working</p>
-
 <br>
-
 <button (click)="toggleVisibility()">toggle visibility ngIf</button>
-
 <br><br>
-
-<p>* component use</p>
