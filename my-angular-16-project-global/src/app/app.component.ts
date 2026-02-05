@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
-import { AfterViewInit, Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
+import { AfterViewChecked, AfterViewInit, Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { TestingService } from "./services/testing.service";
 import { DayTwoComponent } from "./day-two/day-two.component";
 
@@ -9,8 +9,6 @@ import { DayTwoComponent } from "./day-two/day-two.component";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-
-  // imports:[DayTwoComponent]
 })
 export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
   title="data is passed successfully"
@@ -38,5 +36,8 @@ export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
     console.log("ng on destroy is called");
   }
 
+  ngAfterViewChecked(): void {
+    
+  }
   
 }
