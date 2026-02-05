@@ -1,0 +1,8 @@
+<h2>child works!</h2>
+<p>this is message from parent {{message}}</p>
+
+<p>service data works for child - {{childServiceData}}</p>
+
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
