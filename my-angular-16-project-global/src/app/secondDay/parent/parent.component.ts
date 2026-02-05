@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { TestingService } from 'src/app/services/testing.service';
 
 @Component({
@@ -7,17 +7,30 @@ import { TestingService } from 'src/app/services/testing.service';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-  message: string = 'hello ';
-  serviceDataInChild: string = '';
+  
+  city: string = '';
+  cities: string[] = [];
+  index = -1;
 
-  items = ['item1', 'item2', 'item3', 'item4'];
 
-  addItem(newItem: string) {
-    this.items.push(newItem);
+  addCity(){
+
+    this.index == -1 ? this.cities.push(this.city) : this.cities[this.index] = this.city;
+    
+    this.index=-1;
   }
 
-  constructor(private test:TestingService){
-    this.serviceDataInChild = test.getData()[0];
+  updateCity(index: number){
+
+    this.city = this.cities[index];
+
+    this.index=index;
   }
 
+  deleteCity(index: number){
+
+    console.log(index);
+
+    this.cities.splice(index,1);
+  }
 }

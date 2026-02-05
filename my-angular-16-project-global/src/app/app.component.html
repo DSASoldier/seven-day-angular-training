@@ -1,3 +1,7 @@
-<app-day-two title="sudeep chatterjee"></app-day-two>
+
 <app-parent></app-parent>
+<a routerLink="/" class="nav-link">About</a>
+<a [routerLink]="['/career']" [queryParams]="{ ids: productIds }" class="nav-link">Career</a>
+<a routerLink="/login" class="nav-link">Login</a>
+
 <router-outlet />
