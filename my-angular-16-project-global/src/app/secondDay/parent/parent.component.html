@@ -1,9 +1,9 @@
 <p>-----------------------------------------------------------------------------------------------------------------parent works!</p>
 
-<p>{{serviceDataInChild}}</p>
-<app-child [message]="message" (newItemEvent)="addItem($event)"></app-child>
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" [(ngModel)] = "city">
 
-<p>To show data from child to parent </p>
-<ul>
-  <li *ngFor="let item of items">{{item}}</li>
-</ul>
+<button (click)="addCity()" >{{index == -1 ? 'add' : 'save'}}</button>
+
+<app-child [cities]="cities" (index)="updateCity($event)" (deleteIndex)="deleteCity($event)"></app-child>
+

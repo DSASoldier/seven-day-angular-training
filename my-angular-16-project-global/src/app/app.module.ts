@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { DayTwoComponent } from './day-two/day-two.component';
 import { ParentComponent } from './secondDay/parent/parent.component';
 import { ChildComponent } from './secondDay/child/child.component';
+import { LoginComponent } from './day-three/login/login.component';
+import { AboutComponent } from './day-three/about/about.component';
+import { CareerComponent } from './day-three/career/career.component';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,16 @@ import { ChildComponent } from './secondDay/child/child.component';
     HomeComponent,
     DayTwoComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    LoginComponent,
+    AboutComponent,
+    CareerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]
