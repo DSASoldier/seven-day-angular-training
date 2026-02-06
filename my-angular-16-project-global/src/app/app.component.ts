@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
-import { RouterOutlet } from "@angular/router";
+import { Router, RouterOutlet } from "@angular/router";
 import { AfterViewChecked, AfterViewInit, Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { TestingService } from "./services/testing.service";
 import { DayTwoComponent } from "./day-two/day-two.component";
@@ -15,7 +15,7 @@ export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
 
   @ViewChild(DayTwoComponent) child!: DayTwoComponent;
 
-  constructor(private dataItem:TestingService){
+  constructor(private route:Router, private dataItem:TestingService){
     console.log(dataItem.getData());
   }
 
@@ -40,4 +40,10 @@ export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
     
   }
   
+  goToPage1(){
+    this.route.navigate(['/page1'],{
+      queryParams: {category:'electronics',page:100},
+      fragment:'section-jump'
+    })
+  }
 }

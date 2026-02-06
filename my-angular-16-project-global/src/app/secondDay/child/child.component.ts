@@ -8,7 +8,9 @@ import { TestingService } from 'src/app/services/testing.service';
 })
 export class ChildComponent {
 
-  @Input()  message: string = '';
+  @Input(
+    'msg'
+  )  message: string = '';
   childServiceData: string = '';
 
   @Output() newItemEvent = new EventEmitter<string>();
