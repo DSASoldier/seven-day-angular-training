@@ -5,9 +5,11 @@ import { Page2Component } from './fourthDay/page2/page2.component';
 import { Page3Component } from './fourthDay/page3/page3.component';
 import { Page21Component } from './fourthDay/page21/page21.component';
 import { Page22Component } from './fourthDay/page22/page22.component';
+import { LoginComponent } from './fourthDay/login/login.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'page2',pathMatch:'full'},
+  {path:'login/:id',component:LoginComponent},
   {path:'page1',component:Page1Component,data:{
     title: "My Static Data",
     role:"admin"

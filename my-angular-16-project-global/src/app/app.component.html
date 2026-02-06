@@ -6,6 +6,8 @@
     <li><a routerLink="/page2">page2</a></li>
     <li><a routerLink="page3">page3</a></li>
     <li><a [routerLink]="['/page1']" [queryParams]="{category:'electronics',page:'pag1'}" fragment="section-jump">page1</a></li>
+    <li><a [routerLink]="['login','5']">Login</a></li>
+
 </ul>
 <button (click)="goToPage1()">go to page1</button>
 <app-practice></app-practice>

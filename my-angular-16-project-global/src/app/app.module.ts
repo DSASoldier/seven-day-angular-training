@@ -15,6 +15,7 @@ import { Page3Component } from './fourthDay/page3/page3.component';
 import { RouterLink } from '@angular/router';
 import { Page21Component } from './fourthDay/page21/page21.component';
 import { Page22Component } from './fourthDay/page22/page22.component';
+import { LoginComponent } from './fourthDay/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { Page22Component } from './fourthDay/page22/page22.component';
     Page2Component,
     Page3Component,
     Page21Component,
-    Page22Component
+    Page22Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
