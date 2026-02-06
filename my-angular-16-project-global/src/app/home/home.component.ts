@@ -53,5 +53,4 @@ export class HomeComponent {
     this.saveVisible = !this.saveVisible;
     this.index=index;
   }
-  
 }

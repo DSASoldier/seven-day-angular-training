@@ -7,7 +7,7 @@ import { CareerComponent } from './day-three/career/career.component';
 const routes: Routes = [
   {path:'',component:AboutComponent},
   {path:'login',component:LoginComponent},
-  {path:'career',component:CareerComponent}
+  {path:'career/:id/:roleId',component:CareerComponent}
 ];
 
 @NgModule({

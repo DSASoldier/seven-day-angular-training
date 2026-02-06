@@ -12,6 +12,7 @@ import { LoginComponent } from './day-three/login/login.component';
 import { AboutComponent } from './day-three/about/about.component';
 import { CareerComponent } from './day-three/career/career.component';
 import { RouterLink } from '@angular/router';
+import { AbcDirective } from './abc.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RouterLink } from '@angular/router';
     ChildComponent,
     LoginComponent,
     AboutComponent,
-    CareerComponent
+    CareerComponent,
+    AbcDirective
   ],
   imports: [
     BrowserModule,

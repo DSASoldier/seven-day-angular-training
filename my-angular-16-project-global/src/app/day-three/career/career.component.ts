@@ -14,10 +14,17 @@ export class CareerComponent {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params => {
+    this.route.queryParams.subscribe(params => {
       // Use getAll() to retrieve all values for a given key
-      this.productIds = params.getAll('ids');
-      console.log('Product IDs:', this.productIds);
+      console.log(params);
+      // console.log(params.getAll('canAccess'));
+      // console.log(params.getAll('isReady'));
+
     });
+
+    this.route.params.subscribe(params=>{
+      console.log(params);
+    })
+    
   }
 }

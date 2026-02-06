@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy,AfterContentInit {
+export class AppComponent{
   title="data is passed successfully"
 
   userId: number = 10;
@@ -51,5 +51,5 @@ export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy,Af
   ngAfterViewChecked(): void {
     console.log("ng after view checked is called at app");
   }
-  
+
 }
