@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
+import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, HostBinding, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { TestingService } from "./services/testing.service";
 import { DayTwoComponent } from "./day-two/day-two.component";
 import { Router } from '@angular/router';
@@ -18,15 +18,28 @@ export class AppComponent{
 
   productIds: number[]=[1,2,3,4,5,6,7];
 
+  @HostBinding('disabled') role: boolean=false;
+
+
+
+
   @ViewChild(DayTwoComponent) child!: DayTwoComponent;
   
 
   constructor(private dataItem:TestingService){
     console.log(dataItem.getData());
-
+    this.role = false;
   }
   
-  
+  buttonDisable(){
+    this.role = true;
+
+    setTimeout(()=>{
+      this.role = false;
+    },3000);
+    
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log("ng on changes triggered",changes);
   }
