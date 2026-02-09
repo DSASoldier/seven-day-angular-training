@@ -10,34 +10,7 @@ import { DayTwoComponent } from "./day-two/day-two.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements AfterViewInit,OnChanges,OnInit,OnDestroy {
-  title="data is passed successfully"
+export class AppComponent {
 
-  @ViewChild(DayTwoComponent) child!: DayTwoComponent;
-
-  constructor(private dataItem:TestingService){
-    console.log(dataItem.getData());
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("ng on changes triggered",changes);
-  }
-  
-  ngOnInit(): void {
-    console.log("ng on init is called");
-  }
-
-  
-  ngAfterViewInit(): void {
-    console.log('Child component available:', this.child);
-  }
-
-  ngOnDestroy(): void {
-    console.log("ng on destroy is called");
-  }
-
-  ngAfterViewChecked(): void {
-    
-  }
-  
 }
+
