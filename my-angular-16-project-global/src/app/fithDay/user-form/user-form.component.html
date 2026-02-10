@@ -1,0 +1,27 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name">
+    <div *ngIf="userForm.get('name')!.invalid && userForm.get('name')!.touched">
+        Name is required and must be atleast 3 characters long
+    </div>
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <input id="email" type="text" formControlName="email">
+    <div *ngIf="userForm.get('email')!.invalid && userForm.get('email')!.touched">
+        Enter a Valid email address
+    </div>
+    <br>
+    <br>
+    <label for="age">age</label>
+    <input id="age" type="text" formControlName="age">
+
+    <div *ngIf="userForm.get('age')!.invalid && userForm.get('age')!.touched">
+        Age is required and must be 18 or older.
+    </div>
+
+    <br>
+    <br>
+    <button>submit</button>
+</form>
