@@ -14,6 +14,9 @@ import { HandlingHttpRequestComponent } from './fithDay/handling-http-request/ha
 import { HttpClientModule } from '@angular/common/http';
 import { UppercasePipe } from './uppercase.pipe';
 import { PipesComponent } from './fithDay/pipes/pipes.component';
+import { LoginComponent } from './sixthDay/login/login.component';
+import { AdminComponent } from './sixthDay/admin/admin.component';
+import { SignupComponent } from './sixthDay/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { PipesComponent } from './fithDay/pipes/pipes.component';
     TemplateDrivenFormComponent,
     HandlingHttpRequestComponent,
     UppercasePipe,
-    PipesComponent
+    PipesComponent,
+    LoginComponent,
+    AdminComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
