@@ -9,9 +9,10 @@ import { TestingService } from 'src/app/services/testing.service';
 })
 export class ChildComponent {
 
-  @Input() cities: string[]=[];
-  @Output() index = new EventEmitter<number>();
-  @Output() deleteIndex = new EventEmitter<number>();
+  @Input(
+    'msg'
+  )  message: string = '';
+  childServiceData: string = '';
 
   constructor(){
  

@@ -1,7 +1,7 @@
 import { NgFor, NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
-import { RouterOutlet } from "@angular/router";
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, HostBinding, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
+import { Router, RouterOutlet } from "@angular/router";
+import { AfterViewChecked, AfterViewInit, Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { TestingService } from "./services/testing.service";
 import { DayTwoComponent } from "./day-two/day-two.component";
 import { Router } from '@angular/router';
@@ -26,7 +26,7 @@ export class AppComponent{
   @ViewChild(DayTwoComponent) child!: DayTwoComponent;
   
 
-  constructor(private dataItem:TestingService){
+  constructor(private route:Router, private dataItem:TestingService){
     console.log(dataItem.getData());
     this.role = false;
   }
@@ -64,5 +64,11 @@ export class AppComponent{
   ngAfterViewChecked(): void {
     console.log("ng after view checked is called at app");
   }
-
+  
+  goToPage1(){
+    this.route.navigate(['/page1'],{
+      queryParams: {category:'electronics',page:100},
+      fragment:'section-jump'
+    })
+  }
 }
