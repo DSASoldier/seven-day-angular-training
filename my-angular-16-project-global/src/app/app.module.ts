@@ -14,9 +14,9 @@ import { HandlingHttpRequestComponent } from './fithDay/handling-http-request/ha
 import { HttpClientModule } from '@angular/common/http';
 import { UppercasePipe } from './uppercase.pipe';
 import { PipesComponent } from './fithDay/pipes/pipes.component';
-import { LoginComponent } from './sixthDay/login/login.component';
-import { AdminComponent } from './sixthDay/admin/admin.component';
-import { SignupComponent } from './sixthDay/signup/signup.component';
+import { ComponentAComponent } from './seventhDay/component-a/component-a.component';
+import { ComponentBComponent } from './seventhDay/component-b/component-b.component';
+import { DynamicContentComponent } from './seventhDay/dynamic-content/dynamic-content.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +30,9 @@ import { SignupComponent } from './sixthDay/signup/signup.component';
     HandlingHttpRequestComponent,
     UppercasePipe,
     PipesComponent,
-    LoginComponent,
-    AdminComponent,
-    SignupComponent
+    ComponentAComponent,
+    ComponentBComponent,
+    DynamicContentComponent
   ],
   imports: [
     BrowserModule,
