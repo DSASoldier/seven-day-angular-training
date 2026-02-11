@@ -3,7 +3,3 @@
 <p>{{serviceDataInChild}}</p>
 <app-child [msg]="message" (newItemEvent)="addItem($event)"></app-child>
 
-<p>To show data from child to parent </p>
-<ul>
-  <li *ngFor="let item of items">{{item}}</li>
-</ul>
