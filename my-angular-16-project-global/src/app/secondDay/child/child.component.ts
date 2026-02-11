@@ -1,3 +1,4 @@
+import { outputAst } from '@angular/compiler';
 import { Component, Input,Output,EventEmitter } from '@angular/core';
 import { TestingService } from 'src/app/services/testing.service';
 
@@ -8,16 +9,20 @@ import { TestingService } from 'src/app/services/testing.service';
 })
 export class ChildComponent {
 
-  @Input()  message: string = '';
-  childServiceData: string = '';
+  @Input() cities: string[]=[];
+  @Output() index = new EventEmitter<number>();
+  @Output() deleteIndex = new EventEmitter<number>();
 
-  @Output() newItemEvent = new EventEmitter<string>();
-
-  addNewItem(value: string){
-    this.newItemEvent.emit(value);
+  constructor(){
+ 
   }
 
-  constructor(private test:TestingService){
-    this.childServiceData = test.getData()[1];
+  editCity(index: number){
+    this.index.emit(index)
   }
+
+  deleteCity(index: number){
+    this.deleteIndex.emit(index);
+  }
+
 }
