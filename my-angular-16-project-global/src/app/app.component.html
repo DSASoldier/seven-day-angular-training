@@ -7,4 +7,12 @@
 <ng-container #container></ng-container>
 
 <button routerLink="/customers">click for lazy loading</button>
+<app-parent></app-parent>
+<a routerLink="/" class="nav-link">About</a>
+<a [routerLink]="['/career','5','10']" [queryParams]="{role:'developer',canAccess:'no',isReady:'yes'}" class="nav-link">Career</a>
+<a routerLink="/login" class="nav-link">Login</a>
+
+<h1 appAbc>hover me</h1>
+
+<button [disabled]="role" (click)="buttonDisable()">click me</button>
 <router-outlet />

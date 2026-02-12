@@ -17,6 +17,11 @@ import { PipesComponent } from './fithDay/pipes/pipes.component';
 import { ComponentAComponent } from './seventhDay/component-a/component-a.component';
 import { ComponentBComponent } from './seventhDay/component-b/component-b.component';
 import { DynamicContentComponent } from './seventhDay/dynamic-content/dynamic-content.component';
+import { LoginComponent } from './day-three/login/login.component';
+import { AboutComponent } from './day-three/about/about.component';
+import { CareerComponent } from './day-three/career/career.component';
+import { RouterLink } from '@angular/router';
+import { AbcDirective } from './abc.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,10 @@ import { DynamicContentComponent } from './seventhDay/dynamic-content/dynamic-co
     ComponentAComponent,
     ComponentBComponent,
     DynamicContentComponent
+    LoginComponent,
+    AboutComponent,
+    CareerComponent,
+    AbcDirective
   ],
   imports: [
     BrowserModule,
@@ -40,6 +49,7 @@ import { DynamicContentComponent } from './seventhDay/dynamic-content/dynamic-co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]
