@@ -1,0 +1,25 @@
+
+<form #userForm="ngForm" (ngSubmit)="onSubmitDrivenForm(userForm)">
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="user.name" required #nameField="ngModel">
+        
+        <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
+            Name is Required
+        </div>
+    </div>
+
+    <div>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" required email #emailField="ngModel">
+        
+        <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" style="color: red;">
+        <div *ngIf="emailField.errors?.['required']">Email is required.</div>
+        <div *ngIf="emailField.errors?.['email']">Email format is invalid.</div>
+        </div>
+    </div>
+
+</form>
+
